@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Gulshan Aliyeva</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="project-detail-header">
+            <div class="container">
+                <a href="projects.html" class="back-link">← Back to Projects</a>
+                <h1 class="project-detail-title" id="project-title">Project Detail</h1>
+            </div>
+        </section>
+
+        <section class="project-detail-content">
+            <div class="container">
+                <div class="project-detail-grid">
+                    <div class="project-media">
+                        <div class="project-image-container" id="project-image-container">
+                            <!-- Image or video will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="project-description">
+                        <h2 id="project-name">Project Name</h2>
+                        <div id="project-description">
+                            <!-- Description will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Made with 🤍 by RosettaCode. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get project number from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectNum = urlParams.get('project') || '1';
+
+        // Project data
+        const projects = {
+            '1': {
+                title: 'Project 1',
+                name: 'Project 1',
+                description: `
+                    <p>This is a detailed description of Project 1. You can add information about the project's purpose, technologies used, challenges faced, and outcomes achieved.</p>
+                    <p>Add more details about your project here. Describe what it does, how it works, and what makes it special.</p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                `,
+                image: 'images/project1.jpg',
+                video: null // Set to video URL if you have a video
+            },
+            '2': {
+                title: 'Project 2',
+                name: 'Project 2',
+                description: `
+                    <p>This is a detailed description of Project 2. You can add information about the project's purpose, technologies used, challenges faced, and outcomes achieved.</p>
+                    <p>Add more details about your project here. Describe what it does, how it works, and what makes it special.</p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                `,
+                image: 'images/project2.jpg',
+                video: null
+            },
+            '3': {
+                title: 'Project 3',
+                name: 'Project 3',
+                description: `
+                    <p>This is a detailed description of Project 3. You can add information about the project's purpose, technologies used, challenges faced, and outcomes achieved.</p>
+                    <p>Add more details about your project here. Describe what it does, how it works, and what makes it special.</p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                `,
+                image: 'images/project3.jpg',
+                video: null
+            }
+        };
+
+        // Load project data
+        const project = projects[projectNum] || projects['1'];
+        
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('project-name').textContent = project.name;
+        document.getElementById('project-description').innerHTML = project.description;
+
+        // Load image or video
+        const mediaContainer = document.getElementById('project-image-container');
+        if (project.video) {
+            mediaContainer.innerHTML = `
+                <div class="video-container">
+                    <iframe src="${project.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            `;
+        } else {
+            mediaContainer.innerHTML = `
+                <img src="${project.image}" alt="${project.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23fff%22 font-family=%22Arial%22 font-size=%2220%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EProject Image%3C/text%3E%3C/svg%3E';">
+            `;
+        }
+    </script>
+</body>
+</html>
+

@@ -185,22 +185,26 @@ body {
     color: white;
     padding: 80px 20px;
     text-align: center;
+    overflow: hidden;
 }
 
 .page-title {
     font-size: 3rem;
     margin-bottom: 1rem;
+    animation: slideInFromLeft 1s ease;
 }
 
 .page-subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
+    animation: slideInFromRight 1s ease 0.2s both;
 }
 
 /* About Page */
 .about-content {
     padding: 60px 20px;
     background-color: white;
+    animation: fadeInUp 1s ease 0.3s both;
 }
 
 .about-grid {
@@ -228,6 +232,17 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+.about-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInScale 1s ease;
+}
+
 .about-text h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -244,6 +259,7 @@ body {
 /* Skills Section */
 .skills-section {
     margin-top: 4rem;
+    animation: fadeInUp 1s ease 0.5s both;
 }
 
 .skills-grid {
@@ -255,6 +271,18 @@ body {
     margin-bottom: 0.5rem;
     color: #333;
 }
+
+.skill-item {
+    animation: fadeInUp 0.6s ease;
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skill-item:nth-child(6) { animation-delay: 0.6s; }
+.skill-item:nth-child(7) { animation-delay: 0.7s; }
 
 .skill-bar {
     background-color: #e0e0e0;
@@ -303,12 +331,63 @@ body {
 .projects-content {
     padding: 60px 20px;
     background-color: white;
+    animation: fadeInUp 1s ease 0.3s both;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
+}
+
+.projects-grid-simple {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card-simple {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 0.8s ease;
+}
+
+.project-card-simple:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.project-card-simple:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.project-card-simple:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.project-card-simple:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-simple .project-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.project-card-simple .project-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #667eea;
+}
+
+.project-card-simple .btn {
+    width: 100%;
+    text-align: center;
 }
 
 .project-card {
@@ -383,6 +462,7 @@ body {
 .contact-content {
     padding: 60px 20px;
     background-color: white;
+    animation: fadeInUp 1s ease 0.3s both;
 }
 
 .contact-grid {
@@ -508,6 +588,107 @@ footer {
     margin-top: 4rem;
 }
 
+/* Project Detail Page */
+.project-detail-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 20px 40px;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
+.project-detail-title {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.project-detail-content {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.project-media {
+    position: sticky;
+    top: 100px;
+}
+
+.project-image-container {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInScale 1s ease;
+}
+
+.project-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-description {
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.project-description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #667eea;
+}
+
+.project-description p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.project-description h3 {
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-description ul {
+    color: #666;
+    line-height: 2;
+    padding-left: 1.5rem;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -517,6 +698,39 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -545,6 +759,18 @@ footer {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .projects-grid-simple {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-media {
+        position: static;
     }
 
     .timeline-item {
