@@ -1,15 +1,4 @@
-/* Import Story Script Font - Using Dancing Script as elegant script alternative */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
-
-/* If you have Story Script font files, uncomment and add the paths:
-@font-face {
-    font-family: 'Story Script';
-    src: url('fonts/StoryScript-Regular.woff2') format('woff2'),
-         url('fonts/StoryScript-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*/
+/* Story Script Font - loaded via HTML head */
 
 /* Reset and Base Styles */
 * {
@@ -19,7 +8,9 @@
 }
 
 body {
-    font-family: 'Dancing Script', 'Story Script', cursive;
+    font-family: "Story Script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-size: 1.1rem;
@@ -27,8 +18,9 @@ body {
 
 /* Adjust font sizes for better readability with script font */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Dancing Script', 'Story Script', cursive;
-    font-weight: 600;
+    font-family: "Story Script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Light Mode (Default) - Embroidery Colors */
@@ -67,7 +59,8 @@ body[data-theme="light"] p {
 }
 
 body[data-theme="light"] footer {
-    background: linear-gradient(135deg, #2c2c2c 0%, #3c3c3c 100%);
+    background: linear-gradient(135deg, #d4a5ff 0%, #a5c5ff 50%, #ffa5d4 100%);
+    color: #2c2c2c;
 }
 
 /* Dark Mode - Deep Dark Blue-Black with Accents */
@@ -312,6 +305,10 @@ body[data-theme="dark"] .theme-toggle:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+body[data-theme="dark"] .btn-primary:hover {
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.6), 0 0 30px rgba(138, 43, 226, 0.3);
+}
+
 .btn-secondary {
     background-color: transparent;
     color: white;
@@ -357,6 +354,24 @@ body[data-theme="dark"] .theme-toggle:hover {
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="light"] .feature-icon {
+    filter: drop-shadow(2px 2px 6px rgba(180, 150, 220, 0.5));
+    opacity: 0.6;
+}
+
+body[data-theme="dark"] .feature-icon {
+    filter: drop-shadow(2px 2px 6px rgba(138, 43, 226, 0.6));
+    opacity: 0.5;
+}
+
+.feature-icon:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
 }
 
 .feature-card h3 {
@@ -647,6 +662,24 @@ body[data-theme="dark"] .project-card-simple .project-info h3 {
     height: 100%;
     border-radius: 0;
     font-size: 4rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="light"] .project-img {
+    filter: drop-shadow(2px 2px 6px rgba(180, 150, 220, 0.5));
+    opacity: 0.6;
+}
+
+body[data-theme="dark"] .project-img {
+    filter: drop-shadow(2px 2px 6px rgba(138, 43, 226, 0.6));
+    opacity: 0.5;
+}
+
+.project-img:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
 }
 
 .project-info {
@@ -810,8 +843,16 @@ body[data-theme="dark"] .contact-form-container h2 {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #333;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="light"] .form-group label {
+    color: #333;
+}
+
+body[data-theme="dark"] .form-group label {
+    color: #e8e8e8;
 }
 
 .form-group input,
@@ -837,18 +878,25 @@ body[data-theme="dark"] .contact-form-container h2 {
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
     padding: 2rem 20px;
     margin-top: 4rem;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Project Detail Page */
 .project-detail-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 60px 20px 40px;
+    transition: background 0.3s ease;
+}
+
+body[data-theme="light"] .project-detail-header {
+    background: linear-gradient(135deg, #d4a5ff 0%, #a5c5ff 50%, #ffa5d4 100%);
+}
+
+body[data-theme="dark"] .project-detail-header {
+    background: linear-gradient(135deg, #2a0a2a 0%, #0a0a3a 50%, #3a0a2a 100%);
 }
 
 .back-link {
@@ -876,7 +924,16 @@ body[data-theme="dark"] .project-detail-title {
 
 .project-detail-content {
     padding: 60px 20px;
-    background-color: white;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+body[data-theme="light"] .project-detail-content {
+    background: transparent;
+}
+
+body[data-theme="dark"] .project-detail-content {
+    background: rgba(15, 20, 30, 0.5);
 }
 
 .project-detail-grid {
@@ -895,8 +952,17 @@ body[data-theme="dark"] .project-detail-title {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: fadeInScale 1s ease;
+    transition: box-shadow 0.3s ease;
+}
+
+body[data-theme="light"] .project-image-container {
+    box-shadow: 0 10px 30px rgba(180, 150, 220, 0.3);
+}
+
+body[data-theme="dark"] .project-image-container {
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+    border: 1px solid rgba(138, 43, 226, 0.2);
 }
 
 .project-image-container img {
@@ -935,22 +1001,63 @@ body[data-theme="dark"] .project-description h2 {
 }
 
 .project-description p {
-    color: #666;
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="light"] .project-description p {
+    color: #555;
+}
+
+body[data-theme="dark"] .project-description p {
+    color: #d0d0d0;
 }
 
 .project-description h3 {
-    color: #333;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="light"] .project-description h3 {
+    color: #4a4a4a;
+}
+
+body[data-theme="dark"] .project-description h3 {
+    color: #e8e8e8;
 }
 
 .project-description ul {
-    color: #666;
     line-height: 2;
     padding-left: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="light"] .project-description ul {
+    color: #555;
+}
+
+body[data-theme="dark"] .project-description ul {
+    color: #d0d0d0;
+}
+
+.project-description a {
+    color: #8a5cb8;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="light"] .project-description a {
+    color: #8a5cb8;
+}
+
+body[data-theme="dark"] .project-description a {
+    color: #d4a5ff;
+}
+
+.project-description a:hover {
+    text-decoration: underline;
 }
 
 /* Animations */
