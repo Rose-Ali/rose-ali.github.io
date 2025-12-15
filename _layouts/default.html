@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="style.css">
+    <title>{{ page.title }} | My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Gulshan Aliyeva</div>
+            <ul class="nav-menu">
+                <li><a href="{{ '/' | relative_url }}" class="active">Home</a></li>
+                <li><a href="{{ '/about.html' | relative_url }}">About Me</a></li>
+                <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
+                <li><a href="{{ '/contact.html' | relative_url }}">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- {{ content }} WILL BE INSERTED HERE -->
     {{ content }}
-    <script src="script.js"></script>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Made with 🤍 by RosettaCode. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="{{ '/script.js' | relative_url }}"></script>
 </body>
 </html>

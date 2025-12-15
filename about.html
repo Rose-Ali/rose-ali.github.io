@@ -2,147 +2,114 @@
 layout: default
 title: About Me
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - My Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Gulshan Aliyeva</div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1 class="page-title">About Me</h1>
-                <p class="page-subtitle">Get to know more about who I am and what I do</p>
-            </div>
-        </section>
-
-        <section class="about-content">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-image">
-                        <img src="images/IMG_0230.jpg" alt="Gulshan Aliyeva" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="image-placeholder" style="display: none;">
-                            <span>👤</span>
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <h2>Hello, I'm Gulshan</h2>
-                        <p>
-                            I'm a passionate IT Engineering student with a love for understanding and securing digital experiences. With a growing skillset in core technologies, I bring ideas to life through clean code and a security-focused mindset. I'm building a robust foundation to specialize in cybersecurity.</p>
-                        <p>
-                            My journey started with a deep curiosity about how things work and has evolved into a clear path toward a career dedicated to solving complex problems and building secure solutions that make a difference.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="skills-section hover-section">
-                    <h2 class="section-title">Skills & Expertise</h2>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <h4>HTML coding</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Python coding</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 78%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <h4>C++ coding</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 16%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Project Management</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Azerbaijani Language Skills</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 97%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <h4>English Language Skills</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 97%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Turkish Language Skills</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Japanese Language Skills</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 9%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="education-section hover-section">
-                    <h2 class="section-title">Education & Experience</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-year">2025</div>
-                            <div class="timeline-content">
-                                <h3>Attendee of DevFest Azerbaijan 2025</h3>
-                                <p>Location: ADA University, Baku, Azerbaijan</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2025-present</div>
-                            <div class="timeline-content">
-                                <h3>Student of Bachelor of Science in Information Technology major</h3>
-                                <p>Location: ADA University, Baku, Azerbaijan</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2024-2025</div>
-                            <div class="timeline-content">
-                                <h3>Student of EAPP course</h3>
-                                <p>Location: ADA University, Baku, Azerbaijan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+<main>
+    <section class="page-header">
         <div class="container">
-            <p>&copy; 2025 Made with 🤍 by RosettaCode. All rights reserved.</p>
+            <h1 class="page-title">About Me</h1>
+            <p class="page-subtitle">Get to know more about who I am and what I do</p>
         </div>
-    </footer>
-</body>
-</html>
+    </section>
 
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="{{ '/images/IMG_0230.jpg' | relative_url }}" alt="Gulshan Aliyeva" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder" style="display: none;">
+                        <span>👤</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Hello, I'm Gulshan</h2>
+                    <p>
+                        I'm a passionate IT Engineering student with a love for understanding and securing digital experiences. With a growing skillset in core technologies, I bring ideas to life through clean code and a security-focused mindset. I'm building a robust foundation to specialize in cybersecurity.</p>
+                    <p>
+                        My journey started with a deep curiosity about how things work and has evolved into a clear path toward a career dedicated to solving complex problems and building secure solutions that make a difference.
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-section hover-section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>HTML coding</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 67%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Python coding</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4>C++ coding</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 16%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Project Management</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Azerbaijani Language Skills</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 97%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4>English Language Skills</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 97%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Turkish Language Skills</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Japanese Language Skills</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 9%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-section hover-section">
+                <h2 class="section-title">Education & Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h3>Attendee of DevFest Azerbaijan 2025</h3>
+                            <p>Location: ADA University, Baku, Azerbaijan</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025-present</div>
+                        <div class="timeline-content">
+                            <h3>Student of Bachelor of Science in Information Technology major</h3>
+                            <p>Location: ADA University, Baku, Azerbaijan</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024-2025</div>
+                        <div class="timeline-content">
+                            <h3>Student of EAPP course</h3>
+                            <p>Location: ADA University, Baku, Azerbaijan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
