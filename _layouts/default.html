@@ -14,10 +14,30 @@
         <div class="nav-container">
             <div class="logo">Gulshan Aliyeva</div>
             <ul class="nav-menu">
-                <li><a href="{{ '/' | relative_url }}" class="active">Home</a></li>
-                <li><a href="{{ '/about.html' | relative_url }}">About Me</a></li>
-                <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
-                <li><a href="{{ '/contact.html' | relative_url }}">Contact Me</a></li>
+                <li>
+                    <a href="{{ '/' | relative_url }}"
+                       class="{% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ '/about.html' | relative_url }}"
+                       class="{% if page.url == '/about.html' %}active{% endif %}">
+                        About Me
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ '/projects.html' | relative_url }}"
+                       class="{% if page.url == '/projects.html' or page.url == '/project-detail.html' %}active{% endif %}">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ '/contact.html' | relative_url }}"
+                       class="{% if page.url == '/contact.html' %}active{% endif %}">
+                        Contact Me
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>

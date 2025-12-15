@@ -40,3 +40,101 @@ function updateTheme(theme) {
     document.body.setAttribute('data-theme', theme);
 }
 
+// Project Detail Page Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const projectTitleEl = document.getElementById('project-title');
+    const projectNameEl = document.getElementById('project-name');
+    const projectDescriptionEl = document.getElementById('project-description');
+    const projectImageContainer = document.getElementById('project-image-container');
+
+    // Only run on project detail page
+    if (!projectTitleEl || !projectNameEl || !projectDescriptionEl || !projectImageContainer) {
+        return;
+    }
+
+    // Get project number from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectNum = urlParams.get('project') || '1';
+
+    // Project data
+    const projects = {
+        '1': {
+            title: 'Project 1',
+            name: '"Team Project: How does hardware work?"',
+            description: `
+                <p>In our SITE 1101 course, my team and I just completed the "How does hardware work?" project, and it was a fantastic hands-on experience.</p>
+                <p>Our mission was to build the fundamental building blocks of a computer from the ground up. We physically constructed three basic logic gates—NOT, AND, and OR—using raw electronic components like transistors, resistors, and LEDs on a solderless breadboard.</p>
+                <p>It was a real engineering challenge. We had to meticulously translate circuit diagrams into physical layouts, debug faulty connections when things didn't work, and coordinate our team across three lab sessions while strictly following safety protocols to avoid burning out our components.</p>
+                <p>In the end, we successfully built and demonstrated all three working logic gates. We documented the entire process in a professional video, showing the construction from scratch and providing a clear, step-by-step explanation of how each gate functions. You can watch the video <a href="https://youtu.be/IVuZBS9gx90?si=tZU4gJCBjlHafU4R" target="_blank">here</a>.</p>
+                <p>This project gave us a profound understanding of the hardware layer of computing. We now have a tangible appreciation for how the simple gates we built form the basis of all modern digital systems, from smartphones to supercomputers. It was the perfect blend of theory, hands-on practice, and teamwork.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li><b>Hands-On Learning:</b> Moves beyond textbooks and simulations to physically build and test circuits.</li>
+                    <li><b>Progressive Difficulty:</b> Starts with a simple NOT gate and progresses to more complex AND and OR gates, with optional advanced challenges (NAND, XOR).</li>
+                    <li><b>Collaborative Bonuses:</b> Uniquely encourages inter-team collaboration to build composite circuits, simulating a real-world engineering environment.</li>
+                </ul>
+            `,
+            image: 'images/project1.jpg',
+            video: null // Set to video URL if you have a video
+        },
+        '2': {
+            title: 'Project 2',
+            name: '"Team Project: Hour of Code"',
+            description: `
+                <p>So for our second team project in SITE 1101, we took everything we were learning out of the classroom and into our community. The project was called <b>"Hour of Code,"</b> and its main goal was for us to organize and teach a one-hour introductory coding workshop to a group that doesn't usually have access to that kind of thing.</p>
+                <p>It was all about sharing knowledge. We had to find our own community to partner with—like a local school, a community center, or a group of kids in our neighborhood—and convince them to let us run the event. We used platforms like <b>Microsoft MakeCode</b> with fun, block-based tutorials to make it engaging for complete beginners.</p>
+                <p>The real challenge wasn't just the teaching; it was the entire process of organizing it. We had to coordinate with the community, get permissions, and plan a full session from start to finish.</p>
+                <p>A big part of the project was documenting the whole journey. We created a video recap showing us teaching, the participants learning, and the overall positive impact of the event. Sharing that video online with specific tags was our way of contributing to the global movement.</p>
+                <p>The coolest part was the potential for a 10% bonus if we made an extra effort to reach a community in real need, like a rural school or a group with zero access to technology. It pushed us to think about the real social impact of our skills.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li><b>Community Outreach:</b> The core of the project was taking initiative to find and teach a real-world group.</li>
+                    <li><b>Practical Teaching:</b> We learned how to explain complex topics (coding) in a simple, engaging way using prepared tools.</li>
+                    <li><b>Documenting Impact:</b> We created a video to share the experience and show the real-world impact of our work.</li>
+                </ul>
+            `,
+            image: 'images/project2.jpg',
+            video: null
+        },
+        '3': {
+            title: 'Project 3',
+            name: '"Individual Project: Personal Website"',
+            description: `
+                <p>This third project for SITE 1101 was our big individual challenge: <b>"building and launching our own personal portfolio website from scratch."</b></p>
+                <p>The core idea was to move from theory to a tangible, public-facing product. We had to code a multi-page website that would serve as a professional showcase for who we are and what we've done. The main goal was to give us practical, hands-on skills in web development, version control with <b>Git and GitHub</b>, and using <b>AI as a coding assistant</b>.</p>
+                <p>The project was very structured. We had to build a site with specific pages: a <b>Homepage</b> with a bio and photo, an <b>About Page</b> for our background, and a crucial <b>Projects Page</b> to feature our work—especially the logic gates project from earlier in the semester. We also had to include a navigation bar, a footer, and links to our professional profiles.</p>
+                <p>The real learning curve was mastering the workflow. We used <b>VS Code or Cursor</b> with their built-in AI agents to help us write the <b>HTML, CSS, and JavaScript</b> code. A key requirement was using <b>Git</b> to consistently commit our progress, so our GitHub repository told the story of the website being built piece by piece. Finally, we had to <b>host the site for free using GitHub Pages</b>, making it live on the internet for anyone to see.</p>
+                <p>A unique part of this project was that we had to <b>export and submit our entire AI chat history</b> as proof of our development process, showing how we used the tool to problem-solve and build the site.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li><b>Real-World Portfolio Creation:</b> We didn't just build a class project; we built a functional, public website we can actually use for internships and jobs.</li>
+                    <li><b>Modern Development Workflow:</b> It forced us to learn the essential professional tools: Git, GitHub, and AI-assisted coding.</li>
+                    <li><b>Structured Requirements:</b> The project had a clear checklist of features to implement, from specific pages to responsive design that works on phones.</li>
+                </ul>
+            `,
+            image: 'images/project3.jpg',
+            video: null
+        }
+    };
+
+    // Load project data
+    const project = projects[projectNum] || projects['1'];
+
+    projectTitleEl.textContent = project.title;
+    projectNameEl.textContent = project.name;
+    projectDescriptionEl.innerHTML = project.description;
+
+    // Load image or video
+    if (project.video) {
+        projectImageContainer.innerHTML = `
+            <div class="video-container">
+                <iframe src="${project.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        `;
+    } else {
+        projectImageContainer.innerHTML = `
+            <img src="${project.image}" alt="${project.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23fff%22 font-family=%22Arial%22 font-size=%2220%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EProject Image%3C/text%3E%3C/svg%3E';">
+        `;
+    }
+});
+
